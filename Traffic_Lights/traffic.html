@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Light </title>
+  <link rel="stylesheet" href="traffic_final.css")>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:ital,wght@1,700&family=Roboto:wght@300;500&family=Source+Code+Pro:ital,wght@1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="traffic.js"></script>
+</head>
+<body>
+<div class="all">
+  <h1> WELLCOME TO TRAFFIC LIGHT SIMULATION BASE ON DATABASE</h1>
+</div>
+<div>
+  <div>
+    <form id ="info" name="myinfo" onsubmit="return false">
+      <div class="container">
+        <div id="traffic-light">
+          <div id="stopLight" class="bulb"></div>
+          <div id="slowLight" class="bulb"></div>
+          <div id="goLight" class="bulb"></div>
+        </div>
+        <div class="manual">
+          <div>
+            <p> MANUAL</p>
+          </div>     
+          <div>
+            <div  class="btn-group" role="group" aria-label="Basic example">
+              <button type="submit" name="color" id="red" type="button" class="btn btn-danger" style="background-color:red;color: black;" onclick="redlight();">RED</button>
+              <button  type="submit" name="color" id="yellow" type="button" class="btn btn-warning" style="background-color:yellow;color: black;" onclick="yellowlight();">YELLOW</button>
+              <button type="submit"  name="color" id="green" type="button" class="btn btn-success" style="background-color: green;color: black;" onclick="greenlight();">GREEN</button>
+              <button type="submit" name="color" id="green" type="button" class="btn btn-success" style="background-color: black;color: white;" onclick="auto();">OFF</button>
+            </div>
+          </br>
+              <div >
+                <!-- Rounded switch -->
+                <label class="switch">
+                  <input type="checkbox" id="checkb" onclick="show()">
+                  <span class="slider round"> Toggle this to enable auto mode</span>
+                </label>
+              </div>
+          </div>  
+        </div>
+        <div class="autoo">
+          <div>
+            <p> AUTO</p>
+          </div>
+          <div class="inpot">
+            <input  type="hidden" name ='r' id="text" placeholder="COLOR"> 
+          </br>
+            <input  type="hidden" name ='t' id="timeleft" placeholder="TIME"> 
+          </br>
+          <input  type="hidden" name ='c' id="timechance" placeholder="AUTO"> 
+        </br>
+            <button type="submit" class="btn btn-primary" id="clickButton" hidden>START</button>
+          </div>
+        </div>
+        <div class="time">        
+          <p id="time"> TIMELEFT: 0 </p>
+          
+        </div>
+        <div class="introduction">   
+          <P> COLOR KEY:</P> 
+          <P> 1: RED </P>    
+          <P> 2: YELOW</P>    
+          <P> 3: GREEN</P>    
+          <P> 4: TURN OFF</P>    
+        </div>
+      </div>   
+    </form>
+  </div>
+  <div>
+    <form id ="info1" name="myinfo1" onsubmit="return false">
+      <div class="container">
+        <div id="traffic-light">
+          <div id="stopLight1" class="bulb"></div>
+          <div id="slowLight1" class="bulb"></div>
+          <div id="goLight1" class="bulb"></div>
+        </div>
+        <div class="manual">
+          <div>
+          <p> MANUAL</p>
+        </div>
+        <div  class="btn-group" role="group" aria-label="Basic example">
+          <button type="submit" name="color" id="red" type="button" class="btn btn-danger" style="background-color:red;color: black;" onclick="redlight1();">RED</button>
+          <button  type="submit" name="color" id="yellow" type="button" class="btn btn-warning" style="background-color:yellow;color: black;" onclick="yellowlight1();">YELLOW</button>
+          <button type="submit"  name="color" id="green" type="button" class="btn btn-success" style="background-color: green;color: black;" onclick="greenlight1();">GREEN</button>
+          <button type="submit" name="color" id="green" type="button" class="btn btn-success" style="background-color: black;color: white;" onclick="auto1();">OFF</button>    
+        </div>
+        </br>
+        <div >
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" id="checkb1" onclick="show1()">
+            <span class="slider round"> Toggle this to enable auto mode</span>
+          </label>
+        </div>
+      </div>
+      <div class="autoo">
+        <div>
+          <p> AUTO</p>
+        </div>
+        <div>
+          <div class="inpot">
+            <input  type="hidden" name ='r1' id="text1", placeholder="COLOR"> 
+          </br>
+            <input  type="hidden" name ='t1' id="timeleft1" placeholder="TIME"> 
+        </br>
+            <input  type="hidden" name ='c1' id="timechance1" placeholder="AUTO"> 
+          </br>
+        <button type="submit" class="btn btn-primary" id="clickButton1" hidden>START</button>
+          </div>
+        </div>
+      </div>
+      <div class="time">        
+        <p id="time1"> TIMELEFT: 0 </p>
+      </div>
+      <div class="introduction">        
+      <p> AUTO KEY</p>
+      <p> ON: 0</p>
+      <p> OFF: 1</p>
+      </div>
+    </div>   
+      </div>   
+    </form>
+
+    <div>
+      <form id ="info2" name="myinfo2" onsubmit="return false">
+        <div class="container">
+          <div id="traffic-light">
+            <div id="stopLight2" class="bulb"></div>
+            <div id="slowLight2" class="bulb"></div>
+            <div id="goLight2" class="bulb"></div>
+          </div>
+          <div class="manual">
+            <div>
+            <p> MANUAL</p>
+          </div>
+          <div  class="btn-group" role="group" aria-label="Basic example">
+            <button type="submit" name="color" id="red" type="button" class="btn btn-danger" style="background-color:red;color: black;" onclick="redlight2();">RED</button>
+            <button  type="submit" name="color" id="yellow" type="button" class="btn btn-warning" style="background-color:yellow;color: black;" onclick="yellowlight2();">YELLOW</button>
+            <button type="submit"  name="color" id="green" type="button" class="btn btn-success" style="background-color: green;color: black;" onclick="greenlight2();">GREEN</button>
+            <button type="submit" name="color" id="green" type="button" class="btn btn-success" style="background-color: black;color: white;" onclick="auto2();">OFF</button>    
+          </div>
+        </br>
+          <div >
+            <!-- Rounded switch -->
+            <label class="switch">
+              <input type="checkbox" id="checkb2" onclick="show2()">
+              <span class="slider round"> Toggle this to enable auto mode</span>
+            </label>
+          </div>
+          </div>
+          <div class="autoo">
+            <div>
+              <p> AUTO</p>
+            </div>
+            <div>
+              <div class="inpot">
+                <input  type="hidden" name ='r2' id="text2" placeholder="COLOR"> 
+              </br>
+                <input  type="hidden" name ='t2' id="timeleft2" placeholder="TIME">
+              </br>
+              <input  type="hidden" name ='c2' id="timechance2" placeholder="AUTO">  
+            </br>
+            <button type="submit" class="btn btn-primary" id="clickButton2" hidden>START</button>
+              </div>
+            </div>
+          </div>
+          <div class="time">        
+            <p id="time2"> TIMELEFT: 0 </p>
+          </div>
+          <div class="introduction"> 
+            <p> LET'S TRY</p>
+            <p> EVERYTHING DESIGN BY</p>
+            <a href="https://www.facebook.com/nguyentiennguyen0103" target="_blank">
+            <p> ETHANNGUYEN</p> </a>
+          </div>
+        </div>   
+        </div>   
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
